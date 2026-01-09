@@ -1,5 +1,6 @@
 server:
   port: 8850
+  
 
 spring:
   application:
@@ -9,8 +10,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Divyanshverma2/config-repo
-          username: Divyanshverma2
-          password: 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
+          uri: https://github.com/evanellenstore/config-file-repo
+          username: evanellenstore
+          password: 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
           default-label: main
           clone-on-start: true
