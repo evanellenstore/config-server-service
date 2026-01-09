@@ -1,13 +1,16 @@
+server:
+  port: 8850
+
 spring:
   application:
-    name: config-server-service
-  profiles:
-    active: native
+    name: config-cloud-server
+
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/config
-
-server:
-  port: 8871
+        git:
+          uri: https://github.com/Divyanshverma2/config-repo
+          username: Divyanshverma2
+          password: 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
+          default-label: main
+          clone-on-start: true
