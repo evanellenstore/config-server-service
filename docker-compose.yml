@@ -1,0 +1,8 @@
+version: "3.9"
+
+services:
+  inventory-service:
+    image: config-server-service:latest
+    container_name: config-server-service
+    ports:
+      - "8850:8850"
