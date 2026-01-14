@@ -29,14 +29,14 @@ services:
     image: evanellenstore/eureka-server-service:latest
     container_name: eureka-server-service
     ports:
-      - "9091:9091"
+      - "8761:8761"
     restart: always
     depends_on:
       - config-server-service
 
-  cloud-api-gateway:
-    image: evanellenstore/cloud-api-gateway:latest
-    container_name: cloud-api-gateway
+  cloud-gateway-service:
+    image: evanellenstore/cloud-gateway-service:latest
+    container_name: cloud-gateway-service
     ports:
       - "9090:9090"
     restart: always
@@ -44,8 +44,8 @@ services:
       - config-server-service
       - eureka-server-service
     environment:
-      CONFIG_SERVER_URL: configserver:http://config-server-service:8850
-      EUREKA_URL: http://eureka-server-service:9091/eureka
+      CONFIG_SERVER_URL: configserver:http://host.docker.internal:8850
+      EUREKA_URL: http://eureka-server-service:8761/eureka
       SERVICE_URL1: http://host.docker.internal:2011
       SERVICE_URL2: http://host.docker.internal:2010
 
